@@ -3,6 +3,9 @@ package unitec.org.geomovil;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
 
 public class TareaAutenticarse extends AsyncTask<Integer, String, String> {
 
@@ -21,6 +24,17 @@ public class TareaAutenticarse extends AsyncTask<Integer, String, String> {
 
     @Override
     protected String doInBackground(Integer... integers) {
+
+        String url = "";
+
+// Creamos una instancia de RestTemplate
+        RestTemplate restTemplate = new RestTemplate();
+
+// Agregams el convertidor de string
+        restTemplate.getMessageConverters().add(new StringHttpMessageConverter());
+
+// Efectuamos el GET
+        String result = restTemplate.getForObject(url, String.class);
         return null;
     }
 }
