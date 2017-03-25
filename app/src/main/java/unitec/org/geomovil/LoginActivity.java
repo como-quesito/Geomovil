@@ -22,6 +22,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i=new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(i);
+TareaAutenticarse tareaAutenticarse=new TareaAutenticarse(getApplicationContext());
+
+                tareaAutenticarse.execute(null,null,null);
+
+
             }
         });
 
