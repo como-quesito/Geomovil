@@ -20,11 +20,12 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.botonIngresar).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(i);
+
 TareaAutenticarse tareaAutenticarse=new TareaAutenticarse(getApplicationContext());
 
                 tareaAutenticarse.execute(null,null,null);
+                Intent i=new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
 
 
             }
